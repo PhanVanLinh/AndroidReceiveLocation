@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     >
 
@@ -46,6 +47,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:textSize="13sp"
+        tools:text="latitude"
         />
 
     <TextView
@@ -55,6 +57,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:textSize="13sp"
+        tools:text="longitude"
         />
 
     <TextView
@@ -64,6 +67,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginStart="10dp"
         android:textSize="13sp"
+        tools:text="last_update_time_text"
         />
 
     <TextView
@@ -72,6 +76,7 @@
         android:layout_height="wrap_content"
         android:text="location_settings_inadequate_warning"
         android:visibility="invisible"
+        tools:text="location_settings_inadequate_warning"
         />
 </LinearLayout>
 

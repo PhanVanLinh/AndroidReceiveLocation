@@ -15,7 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LocationManagerActivity extends AppCompatActivity {
-    int UPDATE_INTERVAL_IN_MILLISECONDS = 2000;
+    int UPDATE_INTERVAL_IN_MILLISECONDS = 500;
     String TAG = "LocationManagerActivity";
     LocationManager mLocationManager;
     LocationListener mLocationManagerListener = new LocationListener() {
@@ -24,7 +24,7 @@ public class LocationManagerActivity extends AppCompatActivity {
             Toast.makeText(LocationManagerActivity.this,
                     "location change " + location.getLongitude(), Toast.LENGTH_SHORT).show();
             Log.i(TAG, "location change " + location.getLongitude());
-            tvLog.append("location change " + location.getLongitude() + "\n");
+            tvLog.append("location change " + location.getLongitude() + " " + location.getProvider() + "\n");
         }
 
         @Override
@@ -34,12 +34,14 @@ public class LocationManagerActivity extends AppCompatActivity {
 
         @Override
         public void onProviderEnabled(String provider) {
-
+            Toast.makeText(LocationManagerActivity.this,
+                    "onProviderEnabled" + provider, Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onProviderDisabled(String provider) {
-
+            Toast.makeText(LocationManagerActivity.this,
+                    "onProviderDisabled" + provider, Toast.LENGTH_SHORT).show();
         }
     };
     private TextView tvLog;
